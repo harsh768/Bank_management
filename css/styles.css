@@ -87,12 +87,6 @@ body {
   font-size: .8em;
   line-height: 1.8;
 }
-#testimonials {
-  font-style: italic;
-}
-#testimonials p:nth-child(2) {
-  margin-top: 25px;
-}
 /* END FOOTER */
 
 
