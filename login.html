@@ -35,7 +35,7 @@
               <a href="personal_banking.html">
                 <br class="hidden-xs"> Personal Banking</a>
             </li>
-            <li class="visible-xs active">
+            <li>
               <a href="corporate_banking.html">
               <br class="hidden-xs"> Corporate Banking</a>
             </li>
@@ -52,11 +52,41 @@
       </div><!-- .container -->
     </nav><!-- #header-nav -->
   </header>
-  <div id="main-content" class="container">
-   <p>CORPO LOGIN PAGE</p>
-   <div><br>
-    <button><a href="login.html">LOGIN</a></button>
-  </div>
+  <div id="main-content" class="container" style="width: 330px;">
+   <!-- Default form login -->
+    <form class="text-center form-container border border-light p-5" action="#!">
+
+        <p class="h4 mb-4">Sign in</p>
+
+        <!-- Email -->
+        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" style="margin-top: 10px;margin-bottom: 20px;">
+
+        <!-- Password -->
+        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+        <div class="d-flex justify-content-around">
+            <div>
+                <!-- Remember me -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                    <label class="custom-control-label" for="defaultLoginFormRemember" style="margin-top: 20px;">Remember me</label>
+                </div>
+            </div>
+            <div class="forgot_password">
+                <!-- Forgot password -->
+                <a href="forgot_password.html">Forgot password?</a>
+            </div>
+        </div>
+
+        <!-- Sign in button -->
+        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+        <!-- Register -->
+        <p>Not have an account?
+            <a href="sign_up.html">Open an account </a>
+        </p>
+    </form>
+    <!-- Default form login -->
   </div><!-- End of #main-content -->
 
   <footer class="panel-footer">

@@ -63,7 +63,20 @@ body {
   margin-top: -30px;
 }
 /* END HEADER */
-
+/* LOGIN AND SIGN UP FORM CONATAINER*/
+.form-container{
+  margin-top: 50px;
+}
+.btn-info{
+    font-family: 'Times New Roman';
+    font-size: medium;
+    color: #000;
+    background-color: #868686;
+    border-color: #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/*end of login and sign up form*/
 /* FOOTER */
 .panel-footer {
   margin-top: 30px;
