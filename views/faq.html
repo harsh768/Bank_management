@@ -43,7 +43,7 @@
               <a href="home.html#blogs">
                 <br class="hidden-xs"> Blogs</a>
             </li>
-            <li>
+            <li class="visible-xs active">
               <a href="faq.html">
                 <br class="hidden-xs"> FAQs</a>
             </li>
@@ -56,41 +56,75 @@
       </div><!-- .container -->
     </nav><!-- #header-nav -->
   </header>
-  <div id="main-content" class="container" style="width: 330px;">
-   <!-- Default form login -->
-    <form class="text-center form-container border border-light p-5" action="#!">
-
-        <p class="h4 mb-4">Sign in</p>
-
-        <!-- Email -->
-        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" style="margin-top: 10px;margin-bottom: 20px;">
-
-        <!-- Password -->
-        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-
-        <div class="d-flex justify-content-around">
-            <div>
-                <!-- Remember me -->
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                    <label class="custom-control-label" for="defaultLoginFormRemember" style="margin-top: 20px;">Remember me</label>
+  <div id="main-content" class="container">
+ 
+    <div class="container">
+        <div class="panel-group" id="accordion">
+            <div class="faqHeader">General questions</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Q no1 ?</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Ans 1
+                    </div>
                 </div>
             </div>
-            <div class="forgot_password">
-                <!-- Forgot password -->
-                <a href="forgot_password.html">Forgot password?</a>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">q NO2</a>
+                    </h4>
+                </div>
+                <div id="collapseTen" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        ans 2
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">q no 3</a>
+                    </h4>
+                </div>
+                <div id="collapseEleven" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        q no 4
+                    </div>
+                </div>
+            </div>
+            <div class="faqHeader">Personal banking</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">q no 5?</a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                       ans 5
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">q no 6</a>
+                    </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        ans 6
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Sign in button -->
-        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
-
-        <!-- Register -->
-        <p>Not have an account?
-            <a href="sign_up.html">Open an account </a>
-        </p>
-    </form>
-    <!-- Default form login -->
+    </div>
+    
   </div><!-- End of #main-content -->
 
   <footer class="panel-footer">

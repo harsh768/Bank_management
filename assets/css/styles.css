@@ -109,12 +109,60 @@ body {
   
   border:0px;
 }
+#myCarousel{
+  width:fit-content;
+  align-items: center;
+}
+.item{
+  height: 300px;
+}
+
 #main-content{
   border:0px solid black;
   color: #000;
 }
 /*blog*/
+.blogs-heading{
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 38;
+}
+.divider{
+  color: #000;
+  border-top: 1px solid #000;
+}
 /*----*/
+/*---faqs styling-*/
+.faqHeader {
+  font-size: 27px;
+  margin: 20px;
+}
+
+.panel-heading [data-toggle="collapse"]:after {
+  font-family: 'Glyphicons Halflings';
+  /*content: "e072"; /* "play" icon *//* will later icon of drag down*/
+  float: right;
+  color: #F58723;
+  font-size: 18px;
+  line-height: 22px;
+  /* rotate "play" icon from > (right arrow) to down arrow */
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+  /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  color: #454444;
+}
+/*-----*/
 /* END HOME PAGE */
 
 /********** Large devices only **********/
