@@ -111,12 +111,17 @@ body {
 }
 #myCarousel{
   width:fit-content;
+  height: fit-content;
   align-items: center;
 }
 .item{
   height: 300px;
 }
-
+.decoration{
+  text-decoration: underline;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
 #main-content{
   border:0px solid black;
   color: #000;
@@ -162,6 +167,13 @@ body {
   transform: rotate(90deg);
   color: #454444;
 }
+.news-section{
+  margin-top: 5px;
+  border: 1px solid black;
+  background-color: black;
+  color: #fff;
+  
+}
 /*-----*/
 /* END HOME PAGE */
 
@@ -171,6 +183,19 @@ body {
    /*have to add if any sliding imag;*/
     height: 675px;
   }
+
+.flex-container {
+  display: flex;
+}
+.news-section{
+  margin: 3px;
+  margin-left: 40px;
+  border: 1px solid black;
+  background-color: black;
+  color: #fff;
+  width: 30%;
+  
+}
 }
 
 /********** Medium devices only **********/
@@ -182,6 +207,19 @@ body {
   /* Home Page */
  
   /* End Home Page */
+
+.flex-container {
+  display: flex;
+}
+.news-section{
+  margin: 3px;
+  margin-left: 40px;
+  border: 1px solid black;
+  background-color: black;
+  color: #fff;
+  width: 50%;
+  
+}
 }
 
 /********** Small devices only **********/
