@@ -1,0 +1,24 @@
+{
+  "name": "bank_management",
+  "version": "1.0.0",
+  "description": "Banking system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harsh768/Bank_management.git"
+  },
+  "author": "Harsh Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harsh768/Bank_management/issues"
+  },
+  "homepage": "https://github.com/harsh768/Bank_management#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
