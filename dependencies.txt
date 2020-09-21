@@ -1,0 +1,10 @@
+This contains all the dependencies and the follwoing command to be written in terminal for backend
+
+=====================================================================================================
+npm init --> this will replace the package.json file
+npm install express --> this will replace the package-lock.json file
+npm install nodemon
+
+=========================================================================================================
+
+
