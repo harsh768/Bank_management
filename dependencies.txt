@@ -6,5 +6,5 @@ npm install express --> this will replace the package-lock.json file
 npm install nodemon
 
 =========================================================================================================
-
+npm install ejs
 
