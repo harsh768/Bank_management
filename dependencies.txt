@@ -1,3 +1,9 @@
+app to be installed : 
+1. Node.js with npm package 
+2. mongoDb
+3. Robo 3T
+
+====================================================================================================
 This contains all the dependencies and the follwoing command to be written in terminal for backend
 
 =====================================================================================================
@@ -7,4 +13,5 @@ npm install nodemon
 
 =========================================================================================================
 npm install ejs
+npm install moongoose 
 
