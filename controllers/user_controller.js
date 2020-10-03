@@ -3,6 +3,7 @@ const User = require('../models/user');
 module.exports.create = function(req,res)
 {
     if (req.body.password == "Okay"){
+        req.flash('error','Passwords entered are different' );
         return res.redirect('back');
     }
 

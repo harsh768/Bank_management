@@ -4,7 +4,7 @@ app to be installed :
 3. Robo 3T
 
 ====================================================================================================
-This contains all the dependencies and the follwoing command to be written in terminal for backend
+This contains all the dependencies and the following command to be written in terminal for backend
 
 =====================================================================================================
 npm init --> this will replace the package.json file

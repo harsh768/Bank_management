@@ -5,3 +5,14 @@ This file includes the changes to be made by harsh or danish
 2. Change the Navigation bar in the header section and make it constant for all pages.
 3. Change the footer section (add contact us form in that).
 4. make a form when user login and clicks on transfer money button
+
+
+
+
+//Harsh
+1. New account
+2. Deposit and Withdrawl ( to create fields in user schema )
+3. Tranfer money
+4. Recent Transactions 
+5. Account details and update account details 
+6. Check Balance 
