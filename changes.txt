@@ -2,3 +2,6 @@ This file includes the changes to be made by harsh or danish
 
 //Danish
 1. Change the sign-up form with final fields as name, password and confirm-password
+2. Change the Navigation bar in the header section and make it constant for all pages.
+3. Change the footer section (add contact us form in that).
+4. make a form when user login and clicks on transfer money button
