@@ -64,30 +64,29 @@
 
     <div class="form-row mb-4">
         <div class="col">
-            <!-- First name -->
-            <input name = "first-name"type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" style="margin-top: 10px;margin-bottom: 20px;">
+            <!-- name -->
+            <input name = "name"type="text" id="defaultRegisterFormName" class="form-control" placeholder="Name" style="margin-top: 10px;margin-bottom: 20px;">
         </div>
         <div class="col">
-            <!-- Last name -->
-            <input name = "last-name" type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+            <!-- Email -->
+            <input name = "email" type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
         </div>
     </div>
 
     <!-- E-mail -->
-    <input name = "email" type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" style="margin-top: 10px;margin-bottom: 20px;">
-
+    <input name = "password" type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password(At least 8 characters and 1 digit)" aria-describedby="defaultRegisterFormPasswordHelpBlock" style="margin-top: 20px;margin-bottom: 20px;">
+    <!------<small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+      At least 8 characters and 1 digit
+  </small>--------->
     <!-- Password -->
-    <input name = "password" type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        At least 8 characters and 1 digit
-    </small>
+    <input name = "password" type="password" id="defaultRegisterFormConfirmPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+  
 
     <!-- Phone number -->
-    <input name = "phone" type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" style="margin-top: 10px;margin-bottom: 20px;">
-    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+    <input name = "phone" type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number(Optional - for two step authentication)" aria-describedby="defaultRegisterFormPhoneHelpBlock" style="margin-top: 20px;margin-bottom: 10px;">
+   <!---------- <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
         Optional - for two step authentication
-    </small>
-
+    </small>    ------------>
     <!-- Newsletter -->
     <div class="custom-control custom-checkbox">
         <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">

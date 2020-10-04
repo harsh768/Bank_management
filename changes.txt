@@ -7,8 +7,12 @@ This file includes the changes to be made by harsh or danish
 4. make a form when user login and clicks on transfer money button
 
 
-
-
+//completed 
+1. completed
+2. first harsh have to connect sign up page with on click button
+3. contact details and contact form has been added to footer section
+4. separate page is needed for transactions form
+//
 //Harsh
 1. New account
 2. Deposit and Withdrawl ( to create fields in user schema )
