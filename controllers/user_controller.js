@@ -3,7 +3,7 @@ const User = require('../models/user');
 module.exports.create = function(req,res)
 {
     if (req.body.password != req.body.confirm_password){
-        // req.flash('error','Passwords entered are different' );
+        req.flash('error','Passwords entered are different' );
         return res.redirect('back');
     }
 
@@ -14,10 +14,11 @@ module.exports.create = function(req,res)
             User.create(req.body, function(err, user){
                 if(err){console.log('*********error in creating user while signing up',err); return}
 
-                // req.flash('success','New User created');
+                req.flash('success','New User created');
                 return res.redirect('/users/login');
             })
         }else{
+            req.flash('success','Email Id already there!');
             return res.redirect('back');
         }
 
@@ -41,7 +42,7 @@ module.exports.login = function(req,res)
             title : "Signed In"
         });
     }
-
+    req.flash('success','Logged in successfully');
     return res.render('login',{
         title : "Login Page",
     });
