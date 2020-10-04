@@ -1,7 +1,16 @@
-
-  <div id="main-content" class="container">
+<div id="main-content" class="container">
    <p>Personal Login Page</p>
-   <button><a href="/user/login">LOGIN</a></button>
-  </div><!-- End of #main-content -->
+   <% if(locals.user) {%>
+      <button><a href="/user/sign-out">sign-out</a></button>
+    
+    <!-- Write the aside section in here like all the options for user. They will only be visible whwn the user is logged In. -->
+    
+    
+    
+      <% } else { %>
+      <button><a href="/user/login">LOGIN</a></button>
+    <% } %>
+  
+</div><!-- End of #main-content -->
 
   

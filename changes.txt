@@ -1,19 +1,10 @@
 This file includes the changes to be made by harsh or danish
 
 //Danish
-1. Change the sign-up form with final fields as name, password and confirm-password
-2. Change the Navigation bar in the header section and make it constant for all pages.
-3. Change the footer section (add contact us form in that).
-4. make a form when user login and clicks on transfer money button
-5. To fix the bug in faq page when page opened first ques is already open and 4th ques opens answer of third ques 
-
-
-//completed 
-1. completed
-2. first harsh have to connect sign up page with on click button
-3. contact details and contact form has been added to footer section
-4. separate page is needed for transactions form
-
+1. Change the footer section (add contact us form in that).
+2. make a form when user login and clicks on transfer money button
+3. To fix the bug in faq page when page opened first ques is already open and 4th ques opens answer of third ques 
+4. T0 make respective pages on personal banking. (Read personal banking once).
 
 //Harsh
 1. New account
@@ -22,4 +13,4 @@ This file includes the changes to be made by harsh or danish
 4. Recent Transactions 
 5. Account details and update account details 
 6. Check Balance 
-7. To change the if - else statement in login - sign out button on home page.
+7. To make all above functional on personal banking page.
