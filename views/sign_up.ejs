@@ -58,7 +58,7 @@
   </header>
   <div id="main-content" class="container" style="width: 330px;">
    <!-- Default form register -->
-<form class="text-center form-container border border-light p-5" action="/user/create">
+<form class="text-center form-container border border-light p-5" action="/user/create" method="POST">
 
     <p class="h4 mb-4">Sign up</p>
 
@@ -74,12 +74,12 @@
     </div>
 
     <!-- E-mail -->
-    <input name = "password" type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password(At least 8 characters and 1 digit)" aria-describedby="defaultRegisterFormPasswordHelpBlock" style="margin-top: 20px;margin-bottom: 20px;">
+    <input name = "password" type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password (At least 8 characters and 1 digit)" aria-describedby="defaultRegisterFormPasswordHelpBlock" style="margin-top: 20px;margin-bottom: 20px;">
     <!------<small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
       At least 8 characters and 1 digit
   </small>--------->
     <!-- Password -->
-    <input name = "password" type="password" id="defaultRegisterFormConfirmPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <input name = "confirm_password" type="password" id="defaultRegisterFormConfirmPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
   
 
     <!-- Phone number -->
@@ -94,7 +94,7 @@
     </div>
 
     <!-- Sign up button -->
-    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+    <button class="btn btn-info my-4 btn-block" type="submit">Sign up</button>
 
     <!-- Social register -->
     <p>or sign up with:</p>

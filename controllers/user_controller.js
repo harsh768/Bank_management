@@ -2,8 +2,8 @@ const User = require('../models/user');
 
 module.exports.create = function(req,res)
 {
-    if (req.body.password == "Okay"){
-        req.flash('error','Passwords entered are different' );
+    if (req.body.password != req.body.confirm_password){
+        // req.flash('error','Passwords entered are different' );
         return res.redirect('back');
     }
 
@@ -12,9 +12,9 @@ module.exports.create = function(req,res)
 
         if (!user){
             User.create(req.body, function(err, user){
-                if(err){console.log('error in creating user while signing up'); return}
+                if(err){console.log('*********error in creating user while signing up',err); return}
 
-                req.flash('success','New User created');
+                // req.flash('success','New User created');
                 return res.redirect('/users/login');
             })
         }else{
@@ -42,7 +42,7 @@ module.exports.login = function(req,res)
 module.exports.forgot_password = function(req,res)
 {
     return res.render('forgot_password',{
-        title : "Login Page",
+        title : "Forgot password",
     });
 }
 
