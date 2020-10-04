@@ -5,6 +5,7 @@ This file includes the changes to be made by harsh or danish
 2. Change the Navigation bar in the header section and make it constant for all pages.
 3. Change the footer section (add contact us form in that).
 4. make a form when user login and clicks on transfer money button
+5. To fix the bug in faq page when page opened first ques is already open and 4th ques opens answer of third ques 
 
 
 //completed 
@@ -12,7 +13,8 @@ This file includes the changes to be made by harsh or danish
 2. first harsh have to connect sign up page with on click button
 3. contact details and contact form has been added to footer section
 4. separate page is needed for transactions form
-//
+
+
 //Harsh
 1. New account
 2. Deposit and Withdrawl ( to create fields in user schema )
@@ -20,3 +22,4 @@ This file includes the changes to be made by harsh or danish
 4. Recent Transactions 
 5. Account details and update account details 
 6. Check Balance 
+7. To put script for flash in layout.ejs when installed session.

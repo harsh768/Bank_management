@@ -15,4 +15,5 @@ npm install nodemon
 npm install ejs
 npm install moongoose 
 npm install connect-flash
+npm install express-ejs-layouts
 

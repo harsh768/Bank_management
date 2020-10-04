@@ -2,11 +2,12 @@
 const express=require('express');
 const app=express();
 const port = 8000;
+const expressLayouts = require('express-ejs-layouts');
 
 //using database
 const db= require('./config/mongoose');
 
-//Using flash for flash messages
+// Using flash for flash messages
 // const flash=require('connect-flash');
 // const customMware = require('./config/middleware');
 
@@ -15,6 +16,12 @@ app.use(express.urlencoded());
 
 //accessing static files
 app.use(express.static('assets'));
+
+app.use(expressLayouts);
+
+//extract style and scripts from sub pages into layouts
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 
 //Views 
 app.set('view engine','ejs');
