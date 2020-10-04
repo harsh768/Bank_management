@@ -15,7 +15,7 @@ module.exports.create = function(req,res)
                 if(err){console.log('*********error in creating user while signing up',err); return}
 
                 req.flash('success','New User created');
-                return res.redirect('/users/login');
+                return res.redirect('/user/login');
             })
         }else{
             req.flash('success','Email Id already there!');
@@ -38,11 +38,9 @@ module.exports.login = function(req,res)
     if(req.isAuthenticated())
     {
         console.log(req.flash , req.user) ;
-        return res.render('sign_in_home_page',{
-            title : "Signed In"
-        });
+        return res.redirect(`/users/profile`);
+
     }
-    req.flash('success','Logged in successfully');
     return res.render('login',{
         title : "Login Page",
     });
@@ -64,9 +62,7 @@ module.exports.sign_up = function(req,res)
 
 module.exports.createSession = function(req,res){
     req.flash('success','Logged in successfully');    //This is currently in req to pass in res create own middleware
-    return res.render('sign_in_home_page',{
-        title : "Sign In Home Page"
-    });
+    return res.redirect('/');
 }
 
 //Signing out
