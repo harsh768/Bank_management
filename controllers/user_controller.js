@@ -34,6 +34,14 @@ module.exports.profile = function(req,res)
 
 module.exports.login = function(req,res)
 {
+    if(req.isAuthenticated())
+    {
+        console.log(req.flash , req.user) ;
+        return res.render('sign_in_home_page',{
+            title : "Signed In"
+        });
+    }
+
     return res.render('login',{
         title : "Login Page",
     });
@@ -51,4 +59,20 @@ module.exports.sign_up = function(req,res)
     return res.render('sign_up',{
         title : "Sign-Up Page",
     });
+}
+
+module.exports.createSession = function(req,res){
+    req.flash('success','Logged in successfully');    //This is currently in req to pass in res create own middleware
+    return res.render('sign_in_home_page',{
+        title : "Sign In Home Page"
+    });
+}
+
+//Signing out
+module.exports.destroySession = function(req,res)
+{
+    req.logout();
+    req.flash('success','You have logged out!');
+
+    return res.redirect('/');
 }

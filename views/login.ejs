@@ -1,15 +1,15 @@
 
   <div id="main-content" class="container" style="width: 330px;">
    <!-- Default form login -->
-    <form class="text-center form-container border border-light p-5" action="#!">
+    <form class="text-center form-container border border-light p-5" action="/user/create-session" method="POST">
 
         <p class="h4 mb-4">Sign in</p>
 
         <!-- Email -->
-        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" style="margin-top: 10px;margin-bottom: 20px;">
+        <input name= "email"type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" style="margin-top: 10px;margin-bottom: 20px;">
 
         <!-- Password -->
-        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+        <input name ="password" type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
 
         <div class="d-flex justify-content-around">
             <div>

@@ -15,5 +15,10 @@ npm install nodemon
 npm install ejs
 npm install moongoose 
 npm install connect-flash
+=========================================================================================================
 npm install express-ejs-layouts
-
+npm install cookie-parser
+npm install passport
+npm install passport-local
+npm install express-session
+npm install connect-mongo
