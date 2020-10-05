@@ -14,3 +14,5 @@ This file includes the changes to be made by harsh or danish
 5. Account details and update account details 
 6. Check Balance 
 7. To make all above functional on personal banking page.
+8. A place to open calculator
+9. Money converter

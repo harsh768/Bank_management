@@ -22,6 +22,10 @@ const userSchema = new mongoose.Schema
     phone : {
         type : Number,
         unique : true
+    },
+
+    amount : {
+        type : Number, default: 0.0
     }
 
 },{
