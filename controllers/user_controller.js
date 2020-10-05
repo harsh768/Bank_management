@@ -25,6 +25,17 @@ module.exports.create = function(req,res)
     });
 }
 
+module.exports.balance = function(req,res)
+{
+    User.findById(req.params.id,function(err,user){
+        return res.render('balance',{
+            title : "Deposit money",
+            balance : user.amount
+        })
+    })
+
+}
+
 
 module.exports.profile = function(req,res)
 {

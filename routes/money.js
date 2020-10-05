@@ -5,6 +5,9 @@ const moneyController = require('../controllers/money_controller');
 
 router.get('/deposit',moneyController.deposit);
 router.post('/deposit-money/:id',passport.checkAuthentication,moneyController.deposit_db);
+router.get('/withdraw',moneyController.withdraw);
+router.post('/withdraw-money/:id',passport.checkAuthentication,moneyController.withdraw_db);
+
 
 
 module.exports = router;
