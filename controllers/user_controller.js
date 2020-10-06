@@ -1,5 +1,5 @@
 const User = require('../models/user');
-
+const forgot_password_mailer = require('../mailers/forgot_password_mailer');
 
 module.exports.create = function(req,res)
 {
@@ -52,6 +52,25 @@ module.exports.details = function(req,res)
 
 }
 
+module.exports.update = function(req,res)
+{
+    return res.render('updateDetails',{
+        title : "Update Account Details"
+    })
+
+}
+
+module.exports.update_db = function(req,res)
+{
+    User.findById(req.params.id,function(err,user){
+        user.email = req.body.email;
+        user.phone = req.body.phone;
+        user.save();
+
+        return res.redirect(`/user/account-details/${user.id}`);
+    })
+
+}
 
 module.exports.profile = function(req,res)
 {
@@ -80,10 +99,66 @@ module.exports.forgot_password = function(req,res)
     });
 }
 
+module.exports.forgot_password_form = function(req,res)
+{
+    User.findOne({email : req.body.email},function(err,user){
+        if(user){
+            forgot_password_mailer.forgotpassword(user);
+            req.flash('success', "Link sent on Email Id");
+            return res.redirect('/');
+        }
+
+        else {
+            req.flash('error',"No existing User with entered Email Id");
+            return res.redirect('back');
+        }
+    });
+
+
+}
+
+module.exports.resetpassword = function(req,res)
+{
+    return res.render('resetpassword',{
+        title : "Reset Password"
+    });
+}
+
+module.exports.resetpasswordform = function(req,res)
+{
+    User.findOne({email : req.body.email},function(err,user){
+
+        if(user)
+        {
+            if(req.body.password == req.body.confirm_password)
+            {
+                user.password = req.body.password;
+                user.save();
+                req.flash('success',"Password changed Successfully");
+                return res.redirect('/user/login');
+            }
+
+            else {
+                req.flash('error',"password entered are different");
+                return res.redirect('back');
+            }
+        }
+
+        else {
+            req.flash('error',"No existing User with entered Email Id");
+            return res.redirect('back');
+        }
+
+    });
+
+}
+
+
+
 module.exports.sign_up = function(req,res)
 {
     return res.render('sign_up',{
-        title : "Sign-Up Page",
+        title : "Sign-Up Page"
     });
 }
 

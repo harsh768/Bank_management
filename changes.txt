@@ -4,15 +4,10 @@ This file includes the changes to be made by harsh or danish
 1. Change the footer section (add contact us form in that).
 2. make a form when user login and clicks on transfer money button
 3. To fix the bug in faq page when page opened first ques is already open and 4th ques opens answer of third ques 
-4. T0 make respective pages on personal banking. (Read personal banking once).
+4. T0 make aside section on personal banking page. (Read personal banking once).
 
 //Harsh
-1. New account
-2. Deposit and Withdrawl ( to create fields in user schema )
-3. Tranfer money
+
 4. Recent Transactions 
-5. Account details and update account details 
-6. Check Balance 
-7. To make all above functional on personal banking page.
 8. A place to open calculator
 9. Money converter

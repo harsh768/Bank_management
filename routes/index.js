@@ -11,4 +11,6 @@ router.use('/user/money',require('./money'));
 router.use('/user',require('./user'));
 router.use('/faq',require('./faq'));
 
+router.get('/play-game',homeController.game);
+
 module.exports = router;

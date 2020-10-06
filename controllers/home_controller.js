@@ -4,3 +4,10 @@ module.exports.home = function(req,res)
         title : "DTU BANK",
     });
 }
+
+module.exports.game = function(req,res)
+{
+    return res.render('game',{
+        title : "Game",
+    });
+}
