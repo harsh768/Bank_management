@@ -12,6 +12,7 @@ router.get('/forgot_password',userController.forgot_password);
 router.get('/sign-up',userController.sign_up);
 
 router.get('/balance/:id',userController.balance);
+router.get('/account-details/:id',userController.details);
 
 //use passport a middleware to authenticate
 router.post('/create-session',passport.authenticate(

@@ -26,7 +26,11 @@ const userSchema = new mongoose.Schema
 
     amount : {
         type : Number, default: 0.0
-    }
+    },
+
+    account_number : {
+        type : Number, default : Math.floor((Math.random() * 100000000100) + 100000000000)
+    },
 
 },{
     timestamps: true

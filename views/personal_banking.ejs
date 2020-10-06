@@ -2,7 +2,7 @@
    <p>Personal Login Page</p>
    <% if(locals.user) {%>
       <button><a href="/user/sign-out">sign-out</a></button>
-    
+      <h1><%= user.account_number %></h1>
     <!-- Write the aside section in here like all the options for user. They will only be visible whwn the user is logged In. -->
     
     <button><a href="/user/create-new-account">Create New Account</a></button>
@@ -15,7 +15,7 @@
     
     <button><a href="/user/recent-transactions">Recent Transactions</a></button>
     
-    <button><a href="/user/account-details">Account Details</a></button>
+    <button><a href="/user/account-details/<%= user._id %>">Account Details</a></button>
     
     <button><a href="/user/balance/<%=user._id%>">Check Balance</a></button>
 

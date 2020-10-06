@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+
 module.exports.create = function(req,res)
 {
     if (req.body.password != req.body.confirm_password){
@@ -13,6 +14,10 @@ module.exports.create = function(req,res)
         if (!user){
             User.create(req.body, function(err, user){
                 if(err){console.log('*********error in creating user while signing up',err); return}
+
+                var x = Math.floor((Math.random() * 100000000100) + 100000000000);
+                
+                user.account_number = x;
 
                 req.flash('success','New User created');
                 return res.redirect('/user/login');
@@ -31,6 +36,17 @@ module.exports.balance = function(req,res)
         return res.render('balance',{
             title : "Deposit money",
             balance : user.amount
+        })
+    })
+
+}
+
+module.exports.details = function(req,res)
+{
+    User.findById(req.params.id,function(err,user){
+        return res.render('details',{
+            title : "Account Details",
+            user : user
         })
     })
 
@@ -84,3 +100,4 @@ module.exports.destroySession = function(req,res)
 
     return res.redirect('/');
 }
+
