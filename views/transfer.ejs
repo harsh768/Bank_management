@@ -1,5 +1,14 @@
 
   <div id="main-content" class="container">
-  </div><!-- End of #main-content -->
+    <h1>Transfer Money Page</h1>
+    
+    <form action="/user/money/transfer-money/<%= user._id %>" method="POST">
+        
+        <input name = "email" type="email" placeholder="Enter email of other user">
+        <input name = "amount" type="number" placeholder="Enter amount">
 
-  
+        <input type="submit">
+    
+    </form>
+
+  </div><!-- End of #main-content -->

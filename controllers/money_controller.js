@@ -48,3 +48,43 @@ module.exports.withdraw_db = function(req,res)
     })
 }
 
+module.exports.transfer = function(req,res)
+{
+    return res.render('transfer',{
+        title : "Transfer money"
+    })
+}
+
+module.exports.transfer_db = async function(req,res)
+{
+        let user = await User.findById(req.params.id);
+        let secondUser = await User.findOne({email : req.body.email});
+
+        if(secondUser)
+        {
+            let amount = req.body.amount;
+            let final = parseInt(amount,10);
+            if(user.amount >= final)
+            {
+                user.amount -= final;
+                secondUser.amount +=final;
+                req.flash('success' , 'Money Transfered');
+                user.save();
+                secondUser.save();
+            }
+
+            else 
+            {
+                req.flash('error' , 'Not enough Balance');
+                return res.redirect('back');
+            }
+
+        }
+
+        else{
+            req.flash('error' , 'Please Enter A valid user');
+            return res.redirect('back');
+
+        }
+        return res.redirect('/user/profile');
+}
