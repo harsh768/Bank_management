@@ -17,3 +17,19 @@ This file includes the changes to be made by harsh or danish
 
 1. A place to open calculator
 2. Money converter
+==============================================================================
+
+Colors for Headers 
+
+1. mehroon type : #571346
+2. reddish : #9D1D27
+
+
+==============================================================================
+
+Colors for footers : 
+
+==============================================================================
+Others
+
+on hover over aside section links(links color white) : #1DB954 = green
