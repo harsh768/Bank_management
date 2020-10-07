@@ -22,6 +22,8 @@ router.post('/update-details/:id',passport.checkAuthentication,userController.up
 router.get('/reset-password',userController.resetpassword);
 router.post('/reset-password-form',userController.resetpasswordform);
 
+router.get('/recent-transactions/:id',userController.transactions);
+
 //use passport a middleware to authenticate
 router.post('/create-session',passport.authenticate(
     'local',

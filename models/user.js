@@ -32,6 +32,13 @@ const userSchema = new mongoose.Schema
         type : Number, default : Math.floor((Math.random() * 100000000100) + 100000000000)
     },
 
+    transactions : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'transactions'
+        }
+    ]
+
 },{
     timestamps: true
 });

@@ -1,0 +1,38 @@
+
+<div id="main-content" class="container"> 
+	<h1>Recent Transactions</h1>
+	
+	<ul>
+		<% for(transaction of all_transactions) { %> 
+
+			<li>
+				<p> 
+					<% if(transaction.sender.name == transaction.receiver.name) { %> 
+						<% if(transaction.deposit == true) { %> 
+							
+							<h5>Deposited <%= transaction.amount %> Rupees</h5> 
+						
+						<% } else { %> 
+							<h5>Withdrawed <%= transaction.amount %> Rupees</h5> 
+							
+						<% } %>	
+					<% } else if(transaction.sender.name == user.name) { %>
+						<h5>Transaferred <%= transaction.amount%> Rupees To <%= transaction.receiver.name %> </h5>
+					
+					<% } else{ %> 
+						<h5>Received <%= transaction.amount%> Rupees From <%= transaction.sender.name %> </h5>
+						
+					<% } %>
+				</p> 
+				
+			</li>
+			
+		<% } %>
+
+	</ul>
+	
+
+</div><!-- End of #main-content -->
+
+
+ 

@@ -7,6 +7,7 @@ This file includes the changes to be made by harsh or danish
 3. T0 make aside section on personal banking page. (Read personal banking once).
 4. To make all forms as bootstrap forms.
 5. To make blogs in cards.
+6. To make fields like nationality, Dob, gender.
 
 ==============================================================================
 

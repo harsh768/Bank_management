@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Transactions = require('../models/transactions');
 const forgot_password_mailer = require('../mailers/forgot_password_mailer');
 
 module.exports.create = function(req,res)
@@ -153,7 +154,23 @@ module.exports.resetpasswordform = function(req,res)
 
 }
 
+module.exports.transactions = async function(req,res)
+{
+    let transactions = await Transactions.find({$or: [
+        {
+            sender: req.params.id
+        },{
+            receiver: req.params.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
 
+    console.log('#############ALL transactions',transactions);
+
+    return res.render('transactions',{
+        title : "Recent Transactions Page",
+        all_transactions : transactions
+    });
+}
 
 module.exports.sign_up = function(req,res)
 {
