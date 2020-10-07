@@ -1,13 +1,17 @@
 This file includes the changes to be made by harsh or danish
 
 //Danish
-1. Change the footer section (add contact us form in that).
-2. make a form when user login and clicks on transfer money button
-3. To fix the bug in faq page when page opened first ques is already open and 4th ques opens answer of third ques 
-4. T0 make aside section on personal banking page. (Read personal banking once).
+
+1. Change the footer section . In contact us form do only bottom border
+2. To fix the bug in faq page when page opened first ques is already open and 4th ques opens answer of third ques 
+3. T0 make aside section on personal banking page. (Read personal banking once).
+4. To make all forms as bootstrap forms.
+5. To make blogs in cards.
+
+==============================================================================
 
 //Harsh
 
-4. Recent Transactions 
-8. A place to open calculator
-9. Money converter
+1. Recent Transactions 
+2. A place to open calculator
+3. Money converter
