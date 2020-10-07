@@ -2,17 +2,18 @@ This file includes the changes to be made by harsh or danish
 
 //Danish
 
-1. Change the footer section . In contact us form do only bottom border
+1. Change the footer section . In contact us form do only bottom border. Rest three sides No border.
 2. To fix the bug in faq page when page opened first ques is already open and 4th ques opens answer of third ques 
 3. T0 make aside section on personal banking page. (Read personal banking once).
 4. To make all forms as bootstrap forms.
 5. To make blogs in cards.
 6. To make fields like nationality, Dob, gender.
-
+7. To make recent transactions page more decorative and rest all other pages.
+8. To set specific colors and buttons,text  orientation on every page.
+9. To find more content for home page and the crousel photos.
 ==============================================================================
 
 //Harsh
 
-1. Recent Transactions 
-2. A place to open calculator
-3. Money converter
+1. A place to open calculator
+2. Money converter
