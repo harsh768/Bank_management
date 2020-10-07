@@ -1,24 +1,8 @@
 <div id="main-content" class="container">
   <div class="flex-container">
-    <% if(locals.user) {%>
-      <!-- Write the aside section in here like all the options for user. They will only be visible whwn the user is logged In. -->
-      <div class="sidebar">
-        <a href="/user/money/deposit">Deposit Money</a>
-        <a href="/user/money/withdraw">Withdraw money</a>
-        <a href="/user/money/transfer">Transfer money</a>
-        <a href="/user/recent-transactions/<%=user._id %>">Recent Transactions</a>
-        <a href="/user/account-details/<%= user._id %>">Account Details</a>
-        <a href="/user/balance/<%=user._id%>">Check Balance</a>
-        <a href="/play-game">Play to Earn</a>
-        <a href="/user/sign-out">sign-out</a>
-      </div>
+    
+    <%- include('_aside'); %>
 
-      <div>
-        <button><a href="/user/sign-out">sign-out</a></button>
-        <h4>Account Number : <%= user.account_number %></h4></div>
-        <% } else { %>
-        <button><a href="/user/login">LOGIN</a></button>
-      <% } %>
   </div>
 </div><!-- End of #main-content -->
 
