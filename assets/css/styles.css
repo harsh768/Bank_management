@@ -196,6 +196,10 @@ a {
   
 }
 /*-----*/
+.inp{
+  background-color: white;
+  margin: 10px;
+}
 /* The side navigation menu */
 .sidebar {
   margin: 15px;
