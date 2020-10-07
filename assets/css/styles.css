@@ -101,11 +101,26 @@ body {
   line-height: 1.8;
 }
 #input-group,input{
-  color: #000;
+  background-color: #000000;
+  border: 1px;
+  border-color: #fff;
+  border-bottom-style: outset;
+  outline: none;
 }
 textarea{
-  color: #000;
+  background-color: #000000;
+  border: 1px;
+  border-color: #fff;
+  border-bottom-style: outset;
+  outline-color: #fff;
+  outline: none;
+}/*
+a {
+  color:black;
 }
+.btn:hover{
+  background-color: #fff;
+}*/
 /* END FOOTER */
 
 
@@ -181,6 +196,36 @@ textarea{
   
 }
 /*-----*/
+/* The side navigation menu */
+.sidebar {
+  margin: 15px;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: relative;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: black;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
 /* END HOME PAGE */
 
 /********** Large devices only **********/
@@ -231,6 +276,9 @@ textarea{
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
   /* Home Page */
+  .flex-container {
+    display: flex;
+  }
   }
   /* End Home Page */
 
@@ -254,7 +302,6 @@ textarea{
     font-size: 1em;
     margin-right: 5px;
   }
-
   /* End Header */
 
   /* Footer */

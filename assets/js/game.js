@@ -81,7 +81,7 @@ function storeWin(rod, score) {
 
 
 window.addEventListener('keypress', function () {
-    let rodSpeed = 20;
+    let rodSpeed = 50;
 
     let rodRect = rod1.getBoundingClientRect();
 

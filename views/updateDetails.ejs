@@ -1,14 +1,22 @@
 
   <div id="main-content" class="container">
-    <h1>Update Details</h1>
-    
-    <form action="/user/update-details/<%= user._id %>" method="POST">
+    <div class="flex-container">
+      <div class="sidebar">
+        <a href="/user/money/deposit">Deposit Money</a>
+        <a href="/user/money/withdraw">Withdraw money</a>
+        <a href="/user/money/transfer">Transfer money</a>
+        <a href="/user/recent-transactions/<%=user._id %>">Recent Transactions</a>
+        <a href="/user/account-details/<%= user._id %>">Account Details</a>
+        <a href="/user/balance/<%=user._id%>">Check Balance</a>
+        <a href="/play-game">Play to Earn</a>
+      </div>
+      <form action="/user/update-details/<%= user._id %>" method="POST">
+        <h1>Update Details</h1>
+          <input name = "email" type="email" placeholder="Enter New email Id">
+          <input name = "phone" type="number" placeholder="Enter New Phone Number">
 
-        <input name = "email" type="email" placeholder="Enter New email Id">
-        <input name = "phone" type="number" placeholder="Enter New Phone Number">
-
-        <input type="submit">
-    
-    </form>
-
+          <input type="submit">
+      
+      </form>
+    </div>
   </div><!-- End of #main-content -->
