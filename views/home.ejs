@@ -3,7 +3,7 @@
   <div id="main-content" class="container">
     <div class="flex-container">
       
-      <%- include('_crousel'); %>  
+      <%- include('_partials/_crousel'); %>  
 
       <hr class="visible-xs">
       <div class="news-section">
@@ -17,11 +17,7 @@
       </div>
     </div>
     <div><br>
-      <% if(locals.user) {%>
-      <button><a href="/user/sign-out">sign-out</a></button>
-      <% } else { %>
-      <button><a href="/user/login">LOGIN</a></button>
-      <% } %>
+
     </div>
     <br>
     <div class="blogs-heading" id="blogs">

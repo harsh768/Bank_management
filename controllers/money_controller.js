@@ -3,7 +3,7 @@ const Transactions = require('../models/transactions');
 
 module.exports.deposit = function(req,res)
 {
-    return res.render('deposit',{
+    return res.render('personal_banking_views/deposit',{
         title : "Deposit money"
     })
 }
@@ -40,7 +40,7 @@ module.exports.deposit_db = async function(req,res)
 
 module.exports.withdraw = function(req,res)
 {
-    return res.render('withdraw',{
+    return res.render('personal_banking_views/withdraw',{
         title : "Withdraw money"
     })
 }
@@ -81,7 +81,7 @@ module.exports.withdraw_db = async function(req,res)
 
 module.exports.transfer = function(req,res)
 {
-    return res.render('transfer',{
+    return res.render('personal_banking_views/transfer',{
         title : "Transfer money"
     })
 }

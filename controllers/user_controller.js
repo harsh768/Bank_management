@@ -34,8 +34,8 @@ module.exports.create = function(req,res)
 module.exports.balance = function(req,res)
 {
     User.findById(req.params.id,function(err,user){
-        return res.render('balance',{
-            title : "Deposit money",
+        return res.render('personal_banking_views/balance',{
+            title : "Balance",
             balance : user.amount
         })
     })
@@ -45,7 +45,7 @@ module.exports.balance = function(req,res)
 module.exports.details = function(req,res)
 {
     User.findById(req.params.id,function(err,user){
-        return res.render('details',{
+        return res.render('personal_banking_views/details',{
             title : "Account Details",
             user : user
         })
@@ -55,7 +55,7 @@ module.exports.details = function(req,res)
 
 module.exports.update = function(req,res)
 {
-    return res.render('updateDetails',{
+    return res.render('personal_banking_views/updateDetails',{
         title : "Update Account Details"
     })
 
@@ -166,7 +166,7 @@ module.exports.transactions = async function(req,res)
 
     console.log('#############ALL transactions',transactions);
 
-    return res.render('transactions',{
+    return res.render('personal_banking_views/transactions',{
         title : "Recent Transactions Page",
         all_transactions : transactions
     });
