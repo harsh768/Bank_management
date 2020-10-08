@@ -15,6 +15,8 @@ This file includes the changes to be made by harsh or danish
 
 //Harsh
 
+1111. make one table for recent transactions.
+2222.FeedBack bata ek baar color chek kar ke
 1. A place to open calculator
 2. Money converter
 ==============================================================================
