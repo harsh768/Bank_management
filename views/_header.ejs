@@ -36,6 +36,23 @@
               <a href="tel:+919199110501">
                 <br class="hidden-xs"> Contact Us</a></a>
             </li>
+
+            <li>
+              <% if(locals.user) { %> 
+                <a href="/user/sign-out">
+                  <br class="hidden-xs"> Sign Out</a>
+
+              <% } else { %>
+                <a href="/user/login">
+                  <br class="hidden-xs"> Sign In</a>
+              <% } %>
+
+
+            </li>
+
+
+
+
           </ul><!-- #nav-list -->
         </div><!-- .collapse .navbar-collapse -->
       </div><!-- .container -->
