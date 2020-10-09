@@ -35,7 +35,14 @@ const userSchema = new mongoose.Schema
     transactions : [
         {
             type : mongoose.Schema.Types.ObjectId,
-            ref : 'transactions'
+            ref : 'Transactions'
+        }
+    ],
+
+    money_request : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'RequestMoney'
         }
     ]
 

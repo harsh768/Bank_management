@@ -19,6 +19,10 @@ This file includes the changes to be made by harsh or danish
 2222.FeedBack bata ek baar color chek kar ke
 1. A place to open calculator
 2. Money converter
+3. Notifications - Paid Now, Number update on no of Notifications.
+4. Photos
+5. Google Auth
+6. 
 ==============================================================================
 
 Colors for Headers 

@@ -1,0 +1,15 @@
+
+  <div id="main-content" class="container">
+    <div class="flex-container">
+      
+      <%- include('../_partials/_aside'); %>
+  
+      <form action="/user/money/request-money/<%= user._id %>" method="POST" style="margin-left: 40px;">
+        <h2>Request Money Page</h2>
+          <input class="inp" name = "email" type="email" placeholder="Enter email of other user">
+          <input class="inp" name = "amount" type="number" placeholder="Enter amount">
+          <input class="inp" type="submit">
+      
+      </form>
+    </div>
+  </div><!-- End of #main-content -->
