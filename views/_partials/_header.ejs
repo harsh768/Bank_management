@@ -16,44 +16,100 @@
         </div>
         <div id="collapsable-nav" class="collapse navbar-collapse">
            <ul id="nav-list" class="nav navbar-nav navbar-right">
-            <li>
-              <a href="/">
-                <br class="hidden-xs">Home</a>
-            </li>
-            <li>
-              <a href="/user/profile">
-                <br class="hidden-xs"> Personal Banking</a>
-            </li>
-            <li>
-              <a href="/#blogs">
-                <br class="hidden-xs"> Blogs</a>
-            </li>
-            <li>
-              <a href="/faq">
-                <br class="hidden-xs"> FAQs</a>
-            </li>
-            <li>
-              <a href="tel:+919199110501">
-                <br class="hidden-xs"> Contact Us</a></a>
-            </li>
+              <li>
+                <a href="/">
+                  <br class="hidden-xs">Home</a>
+              </li>
+              <li>
+                <a href="/user/profile">
+                  <br class="hidden-xs"> Personal Banking</a>
+              </li>
+              <li>
+                <a href="/#blogs">
+                  <br class="hidden-xs"> Blogs</a>
+              </li>
+              <li>
+                <a href="/faq">
+                  <br class="hidden-xs"> FAQs</a>
+              </li>
+              <li>
+                <a href="tel:+919199110501">
+                  <br class="hidden-xs"> Contact Us</a></a>
+              </li>
 
-            <li>
-              <% if(locals.user) { %> 
-                <a href="/user/sign-out">
-                  <br class="hidden-xs"> Sign Out</a>
+              <li>
+                <% if(locals.user) { %> 
+                  <a href="/user/sign-out">
+                    <br class="hidden-xs"> Sign Out</a>
 
-              <% } else { %>
-                <a href="/user/login">
-                  <br class="hidden-xs"> Sign In</a>
-              <% } %>
-
-
-            </li>
+                <% } else { %>
+                  <a href="/user/login">
+                    <br class="hidden-xs"> Sign In</a>
+                <% } %>
+              </li>
 
 
+              <li>
+                <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-bell"></i>
+                </a>
+                  <ul class="dropdown-menu">
+                    <li class=" text-light bg-dark">
+                      <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-12">
+                          <span>Notifications (3)</span>
+                          <a href="" class="float-right text-light">Mark all as read</a>
+                        </div>
+                    </li>
+                    <li class="notification-box">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-3 text-center">
+                          <img src="/demo/man-profile.jpg" class="w-50 rounded-circle">
+                        </div>    
+                        <div class="col-lg-8 col-sm-8 col-8">
+                          <strong class="text-info">David John</strong>
+                          <div>
+                            Lorem ipsum dolor sit amet, consectetur
+                          </div>
+                          <small class="text-warning">27.11.2015, 15:00</small>
+                        </div>    
+                      </div>
+                    </li>
+                    <li class="notification-box bg-gray">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-3 text-center">
+                          <img src="/demo/man-profile.jpg" class="w-50 rounded-circle">
+                        </div>    
+                        <div class="col-lg-8 col-sm-8 col-8">
+                          <strong class="text-info">David John</strong>
+                          <div>
+                            Lorem ipsum dolor sit amet, consectetur
+                          </div>
+                          <small class="text-warning">27.11.2015, 15:00</small>
+                        </div>    
+                      </div>
+                    </li>
+                    <li class="notification-box">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-3 text-center">
+                          <img src="/demo/man-profile.jpg" class="w-50 rounded-circle">
+                        </div>    
+                        <div class="col-lg-8 col-sm-8 col-8">
+                          <strong class="text-info">David John</strong>
+                          <div>
+                            Lorem ipsum dolor sit amet, consectetur
+                          </div>
+                          <small class="text-warning">27.11.2015, 15:00</small>
+                        </div>    
+                      </div>
+                    </li>
+                    <li class="footer bg-dark text-center">
+                      <a href="" class="text-light">View All</a>
+                    </li>
+                  </ul>
+              </li>
 
-
-          </ul><!-- #nav-list -->
+            </ul><!-- #nav-list -->
         </div><!-- .collapse .navbar-collapse -->
       </div><!-- .container -->
     </nav><!-- #header-nav -->

@@ -75,6 +75,27 @@ a:hover{
   clear: both;
   margin-top: -30px;
 }
+/* notofication pannel*/
+
+.dropdown-menu{
+  top: 60px;
+  right: 0px;
+  left: unset;
+  width: 460px;
+  box-shadow: 0px 5px 7px -1px;
+  padding-bottom: 0px;
+  padding: 0px;
+}
+.dropdown-menu:before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 12px;
+  border:10px solid #343A40;
+  border-color: transparent transparent #343A40 transparent;
+}
+
+/*end of  notofication pannel*/
 /* END HEADER */
 /* LOGIN AND SIGN UP FORM CONATAINER*/
 .form-container{
