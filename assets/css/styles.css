@@ -94,6 +94,16 @@ a:hover{
   border:10px solid #343A40;
   border-color: transparent transparent #343A40 transparent;
 }
+.bell-hea{
+  
+}
+.sd{
+  float: right;
+  margin: 10px;
+}
+.sn{
+  margin: 10px;
+}
 
 /*end of  notofication pannel*/
 /* END HEADER */
