@@ -94,15 +94,23 @@ a:hover{
   border:10px solid #343A40;
   border-color: transparent transparent #343A40 transparent;
 }
+.bg-gray{
+  background-color: rgb(204, 204, 204);
+
+}
+.hed{
+  padding: 0 15px;
+  border-radius: 3px 3px 0px 0px;
+}
+.foter{
+  background-color: #e7e7e7;
+  border-radius: 0px 0px 3px 3px; 
+}
 .bell-hea{
-  
+  background-color: #e7e7e7;
 }
 .sd{
   float: right;
-  margin: 10px;
-}
-.sn{
-  margin: 10px;
 }
 
 /*end of  notofication pannel*/
