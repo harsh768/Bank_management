@@ -1,7 +1,7 @@
 
   <div id="main-content" class="container" style="width: 330px;">
    <!-- Default form register -->
-<form class="text-center form-container border border-light p-5" action="/user/create" method="POST">
+<form class="text-center form-container border border-light p-5" action="/user/create" enctype="multipart/form-data" method="POST">
 
     <p class="h4 mb-4">Sign up</p>
 
@@ -42,6 +42,9 @@
         Optional - for two step authentication
     </small>    ------------>
     <!-- Newsletter -->
+
+    <input type="file" name="avatar" placeholder="profile picture">
+
     <div class="custom-control custom-checkbox">
         <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
         <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>

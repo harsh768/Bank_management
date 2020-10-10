@@ -3,33 +3,45 @@ const Transactions = require('../models/transactions');
 const forgot_password_mailer = require('../mailers/forgot_password_mailer');
 const RequestMoney = require('../models/request_money');
 
-module.exports.create = function(req,res)
+module.exports.create = async function(req,res)
 {
     if (req.body.password != req.body.confirm_password){
         req.flash('error','Passwords entered are different' );
         return res.redirect('back');
     }
 
-    User.findOne({email: req.body.email}, function(err, user){
-        if(err){console.log('error in finding user in signing up'); return}
+    let user = await User.findOne({email: req.body.email});
 
         if (!user){
-            User.create(req.body, function(err, user){
-                if(err){console.log('*********error in creating user while signing up',err); return}
+            let newuser = await User.create(req.body);
 
                 var x = Math.floor((Math.random() * 100000000100) + 100000000000);
-                
-                user.account_number = x;
+                newuser.account_number = x;
+
+                User.uploadedAvatar(req,res,function(err)
+                {
+                    if(err)
+                    {   console.log('*****Multer error',err); return; }
+    
+                    if(req.file)
+                    {
+                        //this is saving the path of upload file into the avatar field in the user
+                        newuser.avatar = User.avatarPath + '/' + req.file.filename;
+                    }
+    
+                    newuser.save();
+                    return res.redirect('back');
+                })
+
 
                 req.flash('success','New User created');
                 return res.redirect('/user/login');
-            })
+
         }else{
             req.flash('success','Email Id already there!');
             return res.redirect('back');
         }
 
-    });
 }
 
 module.exports.balance = async function(req,res)
@@ -68,7 +80,6 @@ module.exports.details = async function(req,res)
         all_requests : requests,
         user : user
     });
-
 }
 
 module.exports.update = async function(req,res)
