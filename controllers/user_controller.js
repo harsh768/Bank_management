@@ -103,17 +103,25 @@ module.exports.update_db = function(req,res)
 module.exports.profile = async function(req,res)
 {
 
-    let requests = await RequestMoney.find({$or: [
-        {
-            sender: req.user.id
-        },{
-            receiver: req.user.id
-        }
-    ]}).sort('-createdAt').populate('sender').populate('receiver');
+    if(req.isAuthenticated())
+    {
+        let requests = await RequestMoney.find({$or: [
+            {
+                sender: req.user.id
+            },{
+                receiver: req.user.id
+            }
+        ]}).sort('-createdAt').populate('sender').populate('receiver');
+    
+        return res.render('personal_banking',{
+            title : "Profile Page",
+            all_requests : requests
+        });
+        
+    }
 
     return res.render('personal_banking',{
-        title : "Profile Page",
-        all_requests : requests
+        title : "Profile Page"
     });
         
 }

@@ -48,6 +48,14 @@
                 <% } %>
               </li>
 
+              <li>
+                <% if(!locals.user) { %> 
+                  <a href="/user/sign-up">
+                    <br class="hidden-xs"> Sign Up</a>
+                <% } %>
+
+              </li>
+
 
               <li>
                 <% if(locals.user) { %> 

@@ -13,8 +13,6 @@ module.exports.home = async function(req,res)
             }
         ]}).sort('-createdAt').populate('sender').populate('receiver');
     
-        console.log('#####Requests ',requests);
-
         return res.render('home',{
             title : "DTU BANK",
             all_requests : requests

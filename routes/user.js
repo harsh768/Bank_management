@@ -13,16 +13,16 @@ router.post('/forgot-password-form',userController.forgot_password_form);
 
 router.get('/sign-up',userController.sign_up);
 
-router.get('/balance/:id',userController.balance);
-router.get('/account-details/:id',userController.details);
+router.get('/balance/:id',passport.checkAuthentication,userController.balance);
+router.get('/account-details/:id',passport.checkAuthentication,userController.details);
 
-router.get('/update-details',userController.update);
+router.get('/update-details',passport.checkAuthentication,userController.update);
 router.post('/update-details/:id',passport.checkAuthentication,userController.update_db);
 
 router.get('/reset-password',userController.resetpassword);
 router.post('/reset-password-form',userController.resetpasswordform);
 
-router.get('/recent-transactions/:id',userController.transactions);
+router.get('/recent-transactions/:id',passport.checkAuthentication,userController.transactions);
 
 //use passport a middleware to authenticate
 router.post('/create-session',passport.authenticate(
