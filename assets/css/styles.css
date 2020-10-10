@@ -2,7 +2,7 @@ body {
   margin: 0.2%;
   font-size: 16px;
   color: #7cb2c7;
-  background-color: #94bbca;
+  background-color: white;
   font-family: 'Times New Roman';
 }
 a {
@@ -14,6 +14,14 @@ a:hover{
 }
 
 /** HEADER **/
+.new-news{
+  background-color: yellow;
+  color: #000;
+}
+.navbar{
+  margin-bottom: 0px;;
+}
+
 #header-nav {
   background-color: rgb(238, 239, 241);
   border-radius: 0px;
@@ -134,7 +142,7 @@ a:hover{
 /*end of login and sign up form*/
 /* FOOTER */
 .panel-footer {
-  margin-top: 30px;
+ /* margin-top: 30px;*/
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #404f55;
@@ -205,7 +213,7 @@ textarea{
   text-align: center;
 }
 #main-content{
-  background-color: #95b5c2;
+  background-color: #d5dada;
   border:0px solid black;
   color: #000;
   font-family: 'Times New Roman';
