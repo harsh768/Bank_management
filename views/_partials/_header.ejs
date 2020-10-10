@@ -50,8 +50,9 @@
 
 
               <li>
-
-                <%- include('_notification'); %>
+                <% if(locals.user) { %> 
+                  <%- include('_notification'); %>
+                <% }  %>
                   
               </li>
 

@@ -2,10 +2,19 @@ const User = require('../models/user');
 const Transactions = require('../models/transactions');
 const RequestMoney = require('../models/request_money');
 
-module.exports.deposit = function(req,res)
+module.exports.deposit = async function(req,res)
 {
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
     return res.render('personal_banking_views/deposit',{
-        title : "Deposit money"
+        title : "Deposit money",
+        all_requests : requests
     })
 }
 
@@ -14,8 +23,6 @@ module.exports.deposit_db = async function(req,res)
     let user = await User.findById(req.params.id);
     if(user)
     {
-
-
         let amount = req.body.amount;
         let final = parseInt(amount,10);
         user.amount += final;
@@ -39,10 +46,19 @@ module.exports.deposit_db = async function(req,res)
 }
 
 
-module.exports.withdraw = function(req,res)
+module.exports.withdraw = async function(req,res)
 {
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
     return res.render('personal_banking_views/withdraw',{
-        title : "Withdraw money"
+        title : "Withdraw money",
+        all_requests : requests
     })
 }
 
@@ -80,10 +96,19 @@ module.exports.withdraw_db = async function(req,res)
     
 }
 
-module.exports.transfer = function(req,res)
+module.exports.transfer = async function(req,res)
 {
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
     return res.render('personal_banking_views/transfer',{
-        title : "Transfer money"
+        title : "Transfer money",
+        all_requests : requests
     })
 }
 
@@ -115,6 +140,8 @@ module.exports.transfer_db = async function(req,res)
                 req.flash('success' , 'Money Transfered');
                 user.save();
                 secondUser.save();
+                return res.redirect('user/profile');
+                
             }
 
             else 
@@ -130,13 +157,21 @@ module.exports.transfer_db = async function(req,res)
             return res.redirect('back');
 
         }
-        return res.redirect('/user/profile');
 }
 
-module.exports.request = function(req,res)
+module.exports.request =async function(req,res)
 {
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
     return res.render('personal_banking_views/request',{
-        title : "request money"
+        title : "request money",
+        all_requests : requests
     })
 }
 
@@ -194,7 +229,20 @@ module.exports.RequestMoneyTransfer = async function(req,res)
                 request_receiver.amount -=final;
                 request.completed = true;
 
+                request.save();
+
+                let transaction = await Transactions.create
+                ({
+                    sender : request_sender.id,
+                    receiver : request_receiver.id,
+                    amount : final,
+                    deposit : false
+                });
+
                 req.flash('success' , 'Money Transfered');
+
+                request_sender.transactions.push(transaction);
+                request_receiver.transactions.push(transaction);
 
                 request_sender.save();
                 request_receiver.save();

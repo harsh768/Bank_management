@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const Transactions = require('../models/transactions');
 const forgot_password_mailer = require('../mailers/forgot_password_mailer');
+const RequestMoney = require('../models/request_money');
 
 module.exports.create = function(req,res)
 {
@@ -31,33 +32,59 @@ module.exports.create = function(req,res)
     });
 }
 
-module.exports.balance = function(req,res)
+module.exports.balance = async function(req,res)
 {
-    User.findById(req.params.id,function(err,user){
-        return res.render('personal_banking_views/balance',{
-            title : "Balance",
-            balance : user.amount
-        })
-    })
+    
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
+    let user = await User.findById(req.params.id);
+    return res.render('personal_banking_views/balance',{
+        title : "balance",
+        all_requests : requests,
+        balance : user.amount
+    });
 
 }
 
-module.exports.details = function(req,res)
+module.exports.details = async function(req,res)
 {
-    User.findById(req.params.id,function(err,user){
-        return res.render('personal_banking_views/details',{
-            title : "Account Details",
-            user : user
-        })
-    })
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
+    let user = await User.findById(req.params.id);
+    return res.render('personal_banking_views/details',{
+        title : "balance",
+        all_requests : requests,
+        user : user
+    });
 
 }
 
-module.exports.update = function(req,res)
+module.exports.update = async function(req,res)
 {
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
     return res.render('personal_banking_views/updateDetails',{
-        title : "Update Account Details"
-    })
+        title : "balance",
+        all_requests : requests
+    });
 
 }
 
@@ -73,11 +100,22 @@ module.exports.update_db = function(req,res)
 
 }
 
-module.exports.profile = function(req,res)
+module.exports.profile = async function(req,res)
 {
+
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
     return res.render('personal_banking',{
-        title : "Profile",
+        title : "Profile Page",
+        all_requests : requests
     });
+        
 }
 
 module.exports.login = function(req,res)
@@ -156,6 +194,14 @@ module.exports.resetpasswordform = function(req,res)
 
 module.exports.transactions = async function(req,res)
 {
+    let requests = await RequestMoney.find({$or: [
+        {
+            sender: req.user.id
+        },{
+            receiver: req.user.id
+        }
+    ]}).sort('-createdAt').populate('sender').populate('receiver');
+
     let transactions = await Transactions.find({$or: [
         {
             sender: req.params.id
@@ -164,11 +210,10 @@ module.exports.transactions = async function(req,res)
         }
     ]}).sort('-createdAt').populate('sender').populate('receiver');
 
-    console.log('#############ALL transactions',transactions);
-
     return res.render('personal_banking_views/transactions',{
         title : "Recent Transactions Page",
-        all_transactions : transactions
+        all_transactions : transactions,
+        all_requests : requests
     });
 }
 
