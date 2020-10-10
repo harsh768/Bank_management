@@ -140,6 +140,17 @@ a:hover{
     margin-bottom: 10px;
 }
 /*end of login and sign up form*/
+
+/*blog card*/
+.blog-card{
+    background-color: red;
+    margin: 2%;
+    padding: 1%;
+}
+.flex-containerr{
+  display: flex;
+}
+/*end blog card*/
 /* FOOTER */
 .panel-footer {
  /* margin-top: 30px;*/
