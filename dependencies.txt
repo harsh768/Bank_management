@@ -26,3 +26,4 @@ npm install connect-mongo
 
 ==========================================================================================================
 npm install nodemailer
+npm install multer

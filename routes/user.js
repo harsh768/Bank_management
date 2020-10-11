@@ -32,4 +32,9 @@ router.post('/create-session',passport.authenticate(
 
 router.get('/sign-out',userController.destroySession);
 
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+
+// below route is defined in index.js because it required callback route as /users/auth..
+// router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), userController.createSession);
+
 module.exports = router;
