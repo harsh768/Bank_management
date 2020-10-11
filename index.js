@@ -3,6 +3,8 @@ const express=require('express');
 const app=express();
 const port = 8000;
 const cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser')
+
 const expressLayouts = require('express-ejs-layouts');
 
 //using database
@@ -23,7 +25,9 @@ const flash=require('connect-flash');
 const customMware = require('./config/middleware');
 
 //Middlewares
+
 app.use(express.urlencoded());
+app.use(express.json());
 
 app.use(cookieParser());
 
@@ -45,7 +49,7 @@ app.set('views','./views');
 
 //Mongo store is used to store the seesion cookie in the database
 app.use(session({
-    name: 'codeial',
+    name: 'Bank',
     // TODO change the secret before deployment in production mode
     secret: 'blahsomething',
     saveUninitialized: false,

@@ -23,8 +23,7 @@ const userSchema = new mongoose.Schema
     },
 
     phone : {
-        type : Number,
-        unique : true
+        type : Number
     },
 
     amount : {

@@ -5,42 +5,54 @@ const RequestMoney = require('../models/request_money');
 
 module.exports.create = async function(req,res)
 {
-    if (req.body.password != req.body.confirm_password){
-        req.flash('error','Passwords entered are different' );
-        return res.redirect('back');
-    }
+    try {
+        User.uploadedAvatar(req,res,async function(err)
+        {
+            if(err) {console.log('* error in multing ',err); return}
 
-    let user = await User.findOne({email: req.body.email});
+            if (req.body.password != req.body.confirm_password){
+                req.flash('error','Passwords entered are different' );
+                return res.redirect('back');
+            }
+    
+            console.log('req.body ', req.body);
+            console.log('name ' , req.body.name);
+            console.log('req.file ',req.file);
+            let user = await User.findOne({email: req.body.email});
+        
+            if (!user){
+                let newuser = await User.create(req.body);
 
-        if (!user){
-            let newuser = await User.create(req.body);
-
-                var x = Math.floor((Math.random() * 100000000100) + 100000000000);
-                newuser.account_number = x;
-
-                User.uploadedAvatar(req,res,function(err)
+                    // var x = Math.floor((Math.random() * 100000000100) + 100000000000);
+                    // newuser.account_number = x;
+        
+                if(req.file)
                 {
-                    if(err)
-                    {   console.log('*****Multer error',err); return; }
-    
-                    if(req.file)
+                    if(newuser.avatar)
                     {
-                        //this is saving the path of upload file into the avatar field in the user
-                        newuser.avatar = User.avatarPath + '/' + req.file.filename;
+                        fs.unlinkSync(path.join(__dirname,'..',user.avatar));
                     }
-    
-                    newuser.save();
-                    return res.redirect('back');
-                })
 
+                    //this is saving the path of upload file into the avatar field in the user
+                    newuser.avatar = User.avatarPath + '/' + req.file.filename;
+                }
+    
+                await newuser.save();
 
                 req.flash('success','New User created');
                 return res.redirect('/user/login');
 
-        }else{
-            req.flash('success','Email Id already there!');
-            return res.redirect('back');
-        }
+            } else{
+                req.flash('success','Email Id already there!');
+                return res.redirect('/user/login');
+            }
+        })
+            
+    } catch (err) {
+
+        console.log('catch error',err);
+    
+    }
 
 }
 
