@@ -142,14 +142,10 @@ a:hover{
 /*end of login and sign up form*/
 
 /*blog card*/
-.blog-card{
-    background-color: red;
-    margin: 2%;
-    padding: 1%;
+.carousel-controll{
+  width: 2%;
 }
-.flex-containerr{
-  display: flex;
-}
+
 /*end blog card*/
 /* FOOTER */
 .panel-footer {
@@ -339,7 +335,17 @@ textarea{
    /*have to add if any sliding imag;*/
     height: 675px;
   }
-
+  .flex-containerr{
+    display: flex;
+  }
+  .blog-card{
+    width: 30rem;
+     background-color: #404f55;
+     margin: 2%;
+     padding: 1%;
+     border: 1px solid;
+   box-shadow: 5px 8px #888888;
+ }
 .flex-container {
   display: flex;
 }
@@ -363,9 +369,22 @@ textarea{
   /* Home Page */
  
   /* End Home Page */
-
+  .flex-containerr{
+    display: flex;
+  }
+  .flex-containerr{
+    display: flex;
+  }
 .flex-container {
   display: flex;
+}
+.blog-card{
+  width: 30rem;
+   background-color: #404f55;
+   margin: 2%;
+   padding: 1%;
+   border: 1px solid;
+ box-shadow: 5px 8px #888888;
 }
 .news-section{
   margin: 3px;
@@ -384,6 +403,17 @@ textarea{
   .flex-container {
     display: flex;
   }
+  .flex-containerr{
+    display: flex;
+  }
+  .blog-card{
+    width: 18rem;
+     background-color: #404f55;
+     margin: 2%;
+     padding: 1%;
+     border: 1px solid;
+   box-shadow: 5px 8px #888888;
+ }
   .news-section{
     margin: 1px;
     margin-left: 20px;
@@ -407,7 +437,17 @@ textarea{
     padding-top: 10px;
     font-size: 5vw; /* 1vw = 1% of viewport width */
   }
-  
+  .flex-containerr{
+    display: flex;
+  }
+  .blog-card{
+    width: 18rem;
+     background-color: #404f55;
+     margin: 2%;
+     padding: 1%;
+     border: 1px solid;
+   box-shadow: 5px 8px #888888;
+ }
 
   #collapsable-nav a { /* */
     font-size: 1.2em;
@@ -443,6 +483,9 @@ textarea{
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
   /* Header */
+  .flex-containerr{
+    display: flex;
+  }
   .navbar-brand h1 { /* Bank Name */
     padding-top: 5px;
     font-size: 6vw;
@@ -451,7 +494,14 @@ textarea{
   
   /* Home page */
 
-
+  .blog-card{
+    width: 18rem;
+     background-color: #404f55;
+     margin: 5%;
+     padding: 1%;
+     border: 1px solid;
+   box-shadow: 5px 8px #888888;
+ }
   .col-xxs-12 {
     position: relative;
     min-height: 1px;
