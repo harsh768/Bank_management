@@ -7,7 +7,13 @@
       <li class="hed text-light bg-dark">
         <div class="row">
           <div class="col-lg-12 col-sm-12 col-12 bell-hea">
-            <span>Notifications (3)</span>
+            <span>
+              <% if(locals.user) { %> 
+                Notifications <%= (all_requests.length) %>
+              <% } else { %> 
+                Notifications (3)
+              <% } %>
+            </span>
 
         
             <a href="" class="sd text-light">Mark all as read</a>
