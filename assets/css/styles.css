@@ -359,7 +359,11 @@ textarea{
   
 }
 }
-
+/*account details table*/
+table, th, td {
+  border: 1px solid;
+}
+/*end ofaccount details table*/
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Header */
@@ -385,6 +389,14 @@ textarea{
    padding: 1%;
    border: 1px solid;
  box-shadow: 5px 8px #888888;
+}
+.cd{
+  
+  transition: transform .3s ease-out;
+  
+}
+.cd:hover{
+  transform: translate(0, -5px);
 }
 .news-section{
   margin: 3px;

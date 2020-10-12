@@ -29,3 +29,4 @@ npm install nodemailer
 npm install multer
 npm install crypto
 npm install passport-google-oauth
+npm install passport-facebook

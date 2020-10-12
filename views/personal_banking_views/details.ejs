@@ -12,52 +12,65 @@
             <a href="/user/balance/<%=user._id%>">Check Balance</a>
             <a href="/play-game">Play to Earn</a>
         </div>
-        <div>
-            <h4>Account Number : <%= user.account_number %></h4>
-                <button><a href="/user/update-details">Update Account Details</a></button></div>
-        <% } else { %>
-            <button><a href="/user/login">LOGIN</a></button>
-        <% } %>
-        
-        <div style="margin-left: 40px;">
-            <h1>Account Details</h1>
+       
 
-            <img src="<%=user.avatar %>" alt="<%=user.name%>" width="100">
+        <div class="table-responsive text-nowrap">
+         
+          <!--Table-->
+          <br>
+          <table class="table table-striped">
+            <caption><h1 class="text-center">Account Details</h1></caption>
 
-            <ul>
-                <li>
-                    <h4> Account Number : <%=user.account_number%></h4>
-                </li>
-
-                <li>
-                    <h4> Name : <%=user.name%></h4>
-                </li>
-
-                <li>
-                    <h4> Email id : <%=user.email%></h4>
-                </li>
-
-                <li>
-                    <h4> Phone Number Linked : <%=user.phone%></h4>
-                </li>
-
-                <li>
-                    <h4> Gender : <%=user.gender%></h4>
-                </li>
-
-                <li>
-                    <h4> Aadhar Number : <%=user.aadhar_number%></h4>
-                </li>
-
-                <li>
-                    <h4> Nationality : <%=user.nationality%></h4>
-                </li>
-
-                <li>
-                    <h4> Date of Birth : <%=user.dob%></h4>
-                </li>
-
-            </ul>
+            <!--Table head-->
+            <tbody>
+              <tr>
+                <th scope="row">Account Number :</th>
+                <td><%=user.account_number%></td>
+              </tr>
+              <tr>
+                <th scope="row">Name :</th>
+                <td><%=user.name%></td>
+              </tr>
+              <tr>
+                <th scope="row">Email id :</th>
+                <td><%=user.email%></td>
+              </tr>
+              <tr>
+                <th scope="row">Phone Number Linked :</th>
+                <td><%=user.phone%></td>
+              </tr>
+              <tr>
+                <th scope="row">Gender :</th>
+                <td><%=user.gender%></td>
+              </tr>
+              <tr>
+                <th scope="row">Aadhar Number :</th>
+                <td><%=user.aadhar_number%></td>
+              </tr>
+              <tr>
+                <th scope="row">Nationality :</th>
+                <td><%=user.nationality%></td>
+              </tr>
+              <tr>
+                <th scope="row">Date of Birth :</th>
+                <td><%=user.dob%></td>
+              </tr>
+            </tbody>
+            <!--Table body-->
+  
+  
+          </table>
+          <!--Table-->
         </div>
+        <div>
+          <h4>Account Number : <%= user.account_number %></h4>
+          <img src="<%=user.avatar %>" alt="<%=user.name%>" width="100">
+          <button><a href="/user/update-details">Update Account Details</a></button>
+      </div>
+<!---if user not found--->
+        <% } else { %>
+          <button><a href="/user/login">LOGIN</a></button>
+      <% } %>
+
     </div>
 </div>
