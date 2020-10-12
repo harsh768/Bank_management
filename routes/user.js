@@ -34,6 +34,10 @@ router.get('/sign-out',userController.destroySession);
 router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 // below route is defined in index.js because it required callback route as /users/auth..
-// router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), userController.createSession);
+// router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/user/login'}), userController.createSession);
+
+// Facebook Authentication
+router.get('/auth/facebook', passport.authenticate('facebook', {scope: ['profile', 'email']}));
+router.get('/auth/facebook/callback', passport.authenticate('facebook', {failureRedirect: '/user/login'}), userController.createSession);
 
 module.exports = router;
