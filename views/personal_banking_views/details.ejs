@@ -14,6 +14,13 @@
         </div>
        
 
+        <div class="style-img-box"> 
+          <!---- <h4>Account Number : <%= user.account_number %></h4>-->
+           <img src="<%=user.avatar %>" class="style-image" width="100px" alt="<%=user.name%>"><br>
+           <button><a href="/user/update-details">Update Account Details</a></button>
+       </div>
+
+
         <div class="table-responsive text-nowrap">
          
           <!--Table-->
@@ -62,11 +69,7 @@
           </table>
           <!--Table-->
         </div>
-        <div>
-          <h4>Account Number : <%= user.account_number %></h4>
-          <img src="<%=user.avatar %>" alt="<%=user.name%>" width="100">
-          <button><a href="/user/update-details">Update Account Details</a></button>
-      </div>
+        
 <!---if user not found--->
         <% } else { %>
           <button><a href="/user/login">LOGIN</a></button>

@@ -138,6 +138,7 @@ a:hover{
     border-color: white;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: max-content;
 }
 /*end of login and sign up form*/
 
@@ -327,7 +328,25 @@ textarea{
   background-color: #555;
   color: white;
 }
+.style-image{
+
+  height:110px;
+  width: 110px;
+  border-radius: 60%;
+  border: 5px #000;
+}
 /* END HOME PAGE */
+
+
+
+
+
+
+
+
+
+
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
@@ -357,6 +376,13 @@ textarea{
   color: black;
   width: 30%;
   
+}
+.style-img-box{
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+  padding-top: 5%;
+  margin: 2%;
+  text-align: center;
 }
 }
 /*account details table*/
@@ -390,13 +416,12 @@ table, th, td {
    border: 1px solid;
  box-shadow: 5px 8px #888888;
 }
-.cd{
-  
-  transition: transform .3s ease-out;
-  
-}
-.cd:hover{
-  transform: translate(0, -5px);
+.style-img-box{
+
+  padding-top: 12%;
+  text-align: center;
+  font-size: small;
+  margin-right: 1%;
 }
 .news-section{
   margin: 3px;
@@ -408,6 +433,8 @@ table, th, td {
   
 }
 }
+
+
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
@@ -426,6 +453,12 @@ table, th, td {
      border: 1px solid;
    box-shadow: 5px 8px #888888;
  }
+  .style-img-box{
+    text-align: center;
+    margin-right: 1%;
+    padding-top: 19%;
+    padding-bottom: 15%;
+  }
   .news-section{
     margin: 1px;
     margin-left: 20px;
@@ -435,6 +468,7 @@ table, th, td {
     width: 50%;
     
   }
+  
   }
   /* End Home Page */
 
