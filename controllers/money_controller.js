@@ -251,7 +251,7 @@ module.exports.RequestMoneyTransfer = async function(req,res)
             else 
             {
                 req.flash('error' , 'Not enough Balance');
-                return res.redirect('back');
+                return res.redirect('/user/money/deposit');
             }
 
         }
