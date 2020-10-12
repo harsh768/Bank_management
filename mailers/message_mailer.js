@@ -9,7 +9,7 @@ exports.message = (body) => {
     nodeMailer.transporter.sendMail({
        from: 'Harsh@codeial.in',
        to: body.email,
-       subject: "Reset Password",
+       subject: "Message Sent!",
        html: htmlString, 
     }, (err, info) => {
         if (err){

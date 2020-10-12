@@ -6,7 +6,7 @@ This file includes the changes to be made by harsh or danish
 2. 
 3. 
 4. To make all forms as bootstrap forms.
-5. To make blogs in cards.// searching for answers
+5. 
 6. 
 7. To make recent transactions page more decorative and rest all other pages.
 8.

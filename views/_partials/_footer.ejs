@@ -4,11 +4,14 @@
         <section id="address" class="col-sm-4">
           <span>Contact Form:</span><br>
           <div class="input-group">
+            <form action="/faq/message" method ="POST" >
             <input name = "name" class="input-group-field" type="text" placeholder="Name"><br>
             <br>
             <input name="email" class="input-group-field" type="email" placeholder="Email address"><br>
             <br>
             <input name="message" class="input-group-field" type="text" placeholder="Message"><br>
+            <input type="submit">
+            </form>
           </div>
           <a class="btn btn-info" href="#">Submit</a>
           <hr class="visible-xs">

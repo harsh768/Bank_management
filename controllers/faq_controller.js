@@ -34,6 +34,6 @@ module.exports.message = async function(req,res)
     message_mailer.message(req.body);
     req.flash('success',"Message Sent");
     console.log('Message Mailer');
-    return res.redirect('back');
+    return res.redirect('/faq');
 
 }
