@@ -21,7 +21,8 @@
         </div>
       </li>
       <li class="notification-box bg-gray">
-        <div class="row">   
+        <div class="row">
+   
           <div class="col-lg-8 col-sm-8 col-8">
               <% if(locals.user) { %> 
                 
@@ -32,12 +33,16 @@
                       <p> 
                         <% if(request.completed == false) { %> 
                           <% if(request.sender.name == user.name) { %> 
+
                             
                             <strong class="text-info"> Request for money sent to <%= request.receiver.name %> </strong>
                             <br>
                             <small class="text-warning" style="color: brown;">Status: Pending</small> 
                           
                           <% } else { %> 
+
+                            <img src="<%= request.sender.avatar %>" alt="<%=user.name%>" width="100">
+                            
                             <strong class="text-info"> <%= request.sender.name %> Requested <%= request.amount%> Rupees </strong>
                             <br>
                             <a href="/user/money/request-money-transfer/<%= request._id %>"> <small class="text-warning" style="color: red;">Tranfer Money</small> </a> 

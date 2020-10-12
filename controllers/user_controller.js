@@ -3,6 +3,10 @@ const Transactions = require('../models/transactions');
 const forgot_password_mailer = require('../mailers/forgot_password_mailer');
 const RequestMoney = require('../models/request_money');
 
+//for deleting avatar
+const fs = require('fs');
+const path = require('path'); 
+
 module.exports.create = async function(req,res)
 {
     try {
@@ -111,15 +115,44 @@ module.exports.update = async function(req,res)
 
 }
 
-module.exports.update_db = function(req,res)
+module.exports.update_db = async function(req,res)
 {
-    User.findById(req.params.id,function(err,user){
-        user.email = req.body.email;
-        user.phone = req.body.phone;
+    try {
+
+        let user = await User.findById(req.params.id);
+
+        User.uploadedAvatar(req,res,async function(err)
+        {
+            if(err)
+            {   console.log('*****Multer error',err); return; }
+
+            user.phone = req.body.phone;
+            user.email = req.body.email;
+
+            if(req.file)
+            {
+                if(user.avatar)
+                {
+                    fs.unlinkSync(path.join(__dirname,'..',user.avatar));
+                }
+
+                //this is saving the path of upload file into the avatar field in the user
+                user.avatar = User.avatarPath + '/' + req.file.filename;
+            }
+
+            await user.save();
+            return res.redirect('back');
+        })
         user.save();
 
         return res.redirect(`/user/account-details/${user.id}`);
-    })
+
+    } catch (error) {
+        req.flash('error',err);
+        return res.redirect('back');  
+    }
+
+    
 
 }
 
