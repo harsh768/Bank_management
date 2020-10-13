@@ -483,6 +483,12 @@ table, th, td {
     padding-top: 10px;
     font-size: 5vw; /* 1vw = 1% of viewport width */
   }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
   .flex-containerr{
     display: flex;
   }
@@ -523,7 +529,13 @@ table, th, td {
     padding: 0;
   }
 }
-
+h3{
+  margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 4px;
+}
 
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
@@ -556,6 +568,12 @@ table, th, td {
     float: left;
     width: 100%;
   }
+
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
 }
 
 

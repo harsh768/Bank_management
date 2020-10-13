@@ -1,6 +1,7 @@
 <% if(locals.user) {%>
     <!-- Write the aside section in here like all the options for user. They will only be visible whwn the user is logged In. -->
-    <div class="sidebar">
+    
+  <!----<div class="sidebar">
       <a href="/user/money/deposit">Deposit Money</a>
       <a href="/user/money/withdraw">Withdraw money</a>
       <a href="/user/money/transfer">Transfer money</a>
@@ -9,10 +10,66 @@
       <a href="/user/balance/<%=user._id%>">Check Balance</a>
       <a href="/play-game">Play to Earn</a>
       <a href="/user/money/request">Request money</a>
-    </div>
-    <div>
+    </div>-->
+
+
+
+
+
+    <nav class=" navbar navbar-expand-sm" style="background-color: transparent;">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#collapsingNavbarSm" style="float: left;">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar" style=" background: #000;"></span>
+            <span class="icon-bar" style=" background: #000;"></span>
+            <span class="icon-bar" style=" background: #000;"></span>
+      </button>
+        <div class="sidebar navbar-collapse collapse" id="collapsingNavbarSm">
+          <ul class="nav navbar-nav navbar-right" style="margin: 2%;">
+            <li>
+              <a href="/user/money/deposit">
+                Deposit Money</a>
+              </li>
+              <li>
+              
+                <a href="/user/money/withdraw">Withdraw money</a>
+              </li>
+              <li>
+                
+                  <a href="/user/money/transfer">Transfer money</a>
+                </li>
+
+                <li>
+                  
+                    <a href="/user/recent-transactions/<%=user._id %>">Recent Transactions</a>
+                  </li>
+
+                  <li>
+                    
+                      <a href="/user/account-details/<%= user._id %>">Account Details</a>
+                    </li>
+      
+                    <li>
+                      
+                        <a href="/user/balance/<%=user._id%>">Check Balance</a>
+                      </li>
+        
+                      <li>
+                      
+                          <a href="/play-game">Play to Earn</a>
+                        </li>
+
+                        <li>
+                          <a href="/user/money/request">Request money</a>
+                          </li>
+            </ul>
+          </div>        
+  </nav>
+
+    
+
+  <!--  <div>
       <h4>Account Number : <%= user.account_number %></h4>
-    </div>
+    </div>-->
 
 <% } else { %>
 
