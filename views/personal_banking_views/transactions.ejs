@@ -91,7 +91,13 @@
                                     <td>----</td>
                                     <% } %>
 							<td>&#8377
-								Balance
+								<% if(transaction.sender.name == transaction.receiver.name) {%> 
+									<%=transaction.balance%>
+								<% } else if(transaction.receiver.name == user.name ) { %>
+									<%= transaction.balance_of_receiver %>
+								<% } else { %>
+								<%=transaction.balance%>
+								<% } %>
 							</td><!--final balance-->
 						</tr>
 						<% } %>	

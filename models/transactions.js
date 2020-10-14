@@ -18,12 +18,23 @@ const transactionsSchema = new mongoose.Schema
 
     deposit : {
         type : Boolean
-    }
+    },
+
+    balance : {
+        type : Number
+    },
+
+    balance_of_receiver : {
+        type : Number
+    },
+    lastActiveAt : Date
+
 
 },{
     timestamps: true
 });
 
+transactionsSchema.lastActiveAt instanceof Date;
 
 const Transactions = mongoose.model('Transactions',transactionsSchema);
 module.exports = Transactions;

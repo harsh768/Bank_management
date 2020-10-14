@@ -50,20 +50,6 @@ const userSchema = new mongoose.Schema
         type : String
     },
 
-    transactions : [
-        {
-            type : mongoose.Schema.Types.ObjectId,
-            ref : 'Transactions'
-        }
-    ],
-
-    money_request : [
-        {
-            type : mongoose.Schema.Types.ObjectId,
-            ref : 'RequestMoney'
-        }
-    ],
-
     avatar : {
         type : String
     }

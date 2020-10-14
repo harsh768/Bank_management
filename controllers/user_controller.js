@@ -143,7 +143,6 @@ module.exports.update_db = async function(req,res)
             await user.save();
             return res.redirect('back');
         })
-        user.save();
 
         return res.redirect(`/user/account-details/${user.id}`);
 
@@ -229,14 +228,14 @@ module.exports.resetpassword = function(req,res)
 
 module.exports.resetpasswordform = function(req,res)
 {
-    User.findOne({email : req.body.email},function(err,user){
+    User.findOne({email : req.body.email},async function(err,user){
 
         if(user)
         {
             if(req.body.password == req.body.confirm_password)
             {
                 user.password = req.body.password;
-                user.save();
+                await user.save();
                 req.flash('success',"Password changed Successfully");
                 return res.redirect('/user/login');
             }
@@ -274,10 +273,13 @@ module.exports.transactions = async function(req,res)
         }
     ]}).sort('-createdAt').populate('sender').populate('receiver');
 
+    let user = await User.findById(req.params.id);
+
     return res.render('personal_banking_views/transactions',{
         title : "Recent Transactions Page",
         all_transactions : transactions,
-        all_requests : requests
+        all_requests : requests,
+        balance : user.amount
     });
 }
 

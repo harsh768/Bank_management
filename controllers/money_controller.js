@@ -32,13 +32,13 @@ module.exports.deposit_db = async function(req,res)
             sender : user.id,
             receiver : user.id,
             amount : final,
-            deposit : true
+            deposit : true,
+            balance : user.amount
         });
 
         console.log('*******Transaction Object in deposit : ',transaction);
-        user.transactions.push(transaction);
 
-        user.save();
+        await user.save();
         req.flash('success' , 'Money Deposited');
         return res.redirect('/user/profile');
     }
@@ -71,20 +71,20 @@ module.exports.withdraw_db = async function(req,res)
     
     if(user.amount >= final)
     {
+        user.amount -= final;
         let transaction = await Transactions.create
         ({
             sender : user.id,
             receiver : user.id,
             amount : final,
-            deposit : false
+            deposit : false,
+            balance : user.amount
         });
 
         console.log('*******Transaction Object in withdraw : ',transaction);
-        user.transactions.push(transaction);
 
-        user.amount -= final;
         req.flash('success' , 'Money Withdrawed');
-        user.save();
+        await user.save();
         return res.redirect('/user/profile');
     }
 
@@ -123,23 +123,25 @@ module.exports.transfer_db = async function(req,res)
             let final = parseInt(amount,10);
             if(user.amount >= final)
             {
+                user.amount -= final;
+                secondUser.amount +=final;
+                
                 let transaction = await Transactions.create
                 ({
                     sender : user.id,
                     receiver : secondUser.id,
                     amount : final,
-                    deposit : false
+                    deposit : false,
+                    balance : user.amount,
+                    balance_of_receiver : secondUser.amount
                 });
 
                 console.log('*******Transaction Object in transfer : ',transaction);
-                user.transactions.push(transaction);
-                secondUser.transactions.push(transaction);
 
-                user.amount -= final;
-                secondUser.amount +=final;
+
                 req.flash('success' , 'Money Transfered');
-                user.save();
-                secondUser.save();
+                await user.save();
+                await secondUser.save();
                 return res.redirect('/user/profile');
                 
             }
@@ -195,11 +197,7 @@ module.exports.send_request = async function(req,res)
             });
 
             console.log('*******Request : ',request);
-            user.money_request.push(request);
-            secondUser.money_request.push(request);
 
-            user.save();
-            secondUser.save();   
 
         }
 
@@ -223,29 +221,28 @@ module.exports.RequestMoneyTransfer = async function(req,res)
         {
             let amount = request.amount;
             let final = parseInt(amount,10);
-            if(request_sender.amount >= final)
+            if(request_receiver.amount >= final)
             {
                 request_sender.amount += final;
                 request_receiver.amount -=final;
                 request.completed = true;
 
-                request.save();
+                await request.save();
 
                 let transaction = await Transactions.create
                 ({
                     sender : request_sender.id,
                     receiver : request_receiver.id,
                     amount : final,
-                    deposit : false
+                    deposit : false,
+                    balance : request_sender.amount,
+                    balance_of_receiver : request_receiver.amount 
                 });
 
                 req.flash('success' , 'Money Transfered');
 
-                request_sender.transactions.push(transaction);
-                request_receiver.transactions.push(transaction);
-
-                request_sender.save();
-                request_receiver.save();
+                await request_sender.save();
+                await request_receiver.save();
             }
 
             else 
