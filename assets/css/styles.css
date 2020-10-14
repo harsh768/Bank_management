@@ -346,8 +346,20 @@ textarea{
 
 
 
+/*account  table*/
+table, th, td {
+  border: 1px solid black;
+}
+.deposit{
+  color: darkgreen;
+  font-weight: bold;
+}
+.withdrawl{
+  color: #ff0000;
+  font-weight: bold;
+}
 
-
+/*end ofaccount details table*/
 /********** Large devices only **********/
 @media (min-width: 1200px) {
   .container .jumbotron {
@@ -384,12 +396,12 @@ textarea{
   margin: 2%;
   text-align: center;
 }
+.tab-mar{
+  margin: 5%;
 }
-/*account details table*/
-table, th, td {
-  border: 1px solid;
 }
-/*end ofaccount details table*/
+
+
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Header */
@@ -431,6 +443,9 @@ table, th, td {
   color: #000;
   width: 50%;
   
+}
+.tab-mar{
+  margin: 5%;
 }
 }
 

@@ -2,7 +2,7 @@
 <div id="main-content" class="container"> 
 	<div class="flex-container">
 		<%- include('../_partials/_aside'); %>
-		<ol>
+		  <!----<ol>
 				<h3 style="margin-left: 40px;">Recent Transactions</h3>
 				<% for(transaction of all_transactions) { %> 
 
@@ -14,13 +14,16 @@
 									<h5>Deposited <%= transaction.amount %> Rupees</h5> 
 								
 								<% } else { %> 
+									
 									<h5>Withdrawed <%= transaction.amount %> Rupees</h5> 
 									
 								<% } %>	
 							<% } else if(transaction.sender.name == user.name) { %>
+							
 								<h5>Credited <%= transaction.amount%> Rupees To <%= transaction.receiver.name %> // <%= transaction.receiver.account_number %> </h5>
 							
 							<% } else{ %> 
+								
 								<h5>Credited <%= transaction.amount%> Rupees From <%= transaction.sender.name %> </h5>
 								
 							<% } %>
@@ -30,7 +33,76 @@
 					
 				<% } %>
 
-			</ol>
+			</ol>-->
+
+
+			<div class="table-responsive text-nowrap tab-mar">
+         
+				<!--Table-->
+				<br>
+				<table class="table table-striped">
+				  <caption style="text-decoration: underline;"><h1 class="text-center">Transactions</h1></caption>
+				  <!--Table head-->
+				  <tbody>
+					<tr>
+						<th scope="row">Date</th>
+						<th scope="row">deposit</th>
+						<th scope="row">withdrawl</th>
+						<th scope="row">Balance</th>
+					</tr>
+					<% for(transaction of all_transactions) { %> 
+						
+						<tr>
+							<td></td><!--date-->
+							<% if(transaction.sender.name == transaction.receiver.name) { %> 
+							 <% if(transaction.deposit == true) { %> 
+								<!--When he clicks for self deposit money-->
+										<td class="deposit">
+											&#8377
+											<%= transaction.amount %>
+											<sub>Self Deposit</sub>
+										</td>
+										<td></td>
+							 <% } else { %> 
+										<td></td>
+										<td class="withdrawl">
+											<!--When he clicks for self withdraw money-->
+											&#8377
+											<%= transaction.amount %>
+											<sub>Self withdrawl</sub>
+										</td>
+							 <% } %>	
+							<% } else if(transaction.sender.name == user.name) { %>
+                                <td></td>
+                                <td class="withdrawl">
+									&#8377
+									<%= transaction.amount%>
+									<!---	When he transfers money to some other person -->
+									<sub>To TRF <%= transaction.receiver.name %><sub class="hidden-xs"><%= transaction.receiver.account_number %></sub></sub>
+									
+                                </td>
+                                <% } else { %> 
+                                    <td class="deposit">
+										&#8377
+										<%= transaction.amount %>
+										<!--When he receives money from some other user-->
+										<sub> From <%= transaction.sender.name %><sub class="hidden-xs"><%= transaction.sender.account_number %></sub></sub>
+                                    </td>
+                                    <td></td>
+                                    <% } %>
+							<td>&#8377
+								Balance
+							</td><!--final balance-->
+						</tr>
+						<% } %>	
+				  </tbody>
+				  <!--Table body-->
+				</table>
+				<!--Table-->
+			  </div><!--table div ended-->
+
+
+
 	</div>
 </div><!-- End of #main-content -->
 

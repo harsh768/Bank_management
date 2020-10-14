@@ -140,7 +140,7 @@ module.exports.transfer_db = async function(req,res)
                 req.flash('success' , 'Money Transfered');
                 user.save();
                 secondUser.save();
-                return res.redirect('user/profile');
+                return res.redirect('/user/profile');
                 
             }
 
