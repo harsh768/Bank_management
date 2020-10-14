@@ -20,32 +20,41 @@
           </div>
         </div>
       </li>
-      <li class="notification-box bg-gray">
-        <div class="row">
-   
-          <div class="col-lg-8 col-sm-8 col-8">
+      <!--<li class="notification-box">
+        <div class="row">-->
               <% if(locals.user) { %> 
-                
-                <ol>
                   <% for(request of all_requests) { %> 
-          
-                    <div>
-                      <p> 
+                    <li class="notification-box bg-gray">
+                      <div class="row">
                         <% if(request.completed == false) { %> 
-                          <% if(request.sender.name == user.name) { %> 
+                          <% if(request.sender.name == user.name) { %>
+                            
+
+                            <div class="col-lg-3 col-sm-3 col-3 text-center">
+                              <img src="<%= request.sender.avatar %>" alt="<%=user.name%>" width="50" style="border-radius: 60%;">
+                            </div>
+                            <div class="col-lg-8 col-sm-8 col-8">  
+                              <strong class="text-info"> Request for money sent to <%= request.receiver.name %> </strong>
+                              <div>
+                               <!--will fill in future if any content-->
+                              </div>
+                              <small class="text-warning" style="color: brown;">Status: Pending</small> 
+                            </div>
 
                             
-                            <strong class="text-info"> Request for money sent to <%= request.receiver.name %> </strong>
-                            <br>
-                            <small class="text-warning" style="color: brown;">Status: Pending</small> 
-                          
+
+
                           <% } else { %> 
-
-                            <img src="<%= request.sender.avatar %>" alt="<%=user.name%>" width="100">
-                            
-                            <strong class="text-info"> <%= request.sender.name %> Requested <%= request.amount%> Rupees </strong>
-                            <br>
-                            <a href="/user/money/request-money-transfer/<%= request._id %>"> <small class="text-warning" style="color: red;">Tranfer Money</small> </a> 
+                            <div class="col-lg-3 col-sm-3 col-3 text-center">
+                              <img src="<%= request.sender.avatar %>" alt="<%=user.name%>" width="50" style="border-radius: 60%;">
+                            </div>
+                            <div class="col-lg-8 col-sm-8 col-8">  
+                              <strong class="text-info"> <%= request.sender.name %> Requested <%= request.amount%> Rupees </strong>
+                              <div>
+                               <!--will fill in future if any content-->
+                              </div>
+                              <a href="/user/money/request-money-transfer/<%= request._id %>"> <small class="text-warning" style="color: red;">Tranfer Money</small> </a>
+                            </div> 
                           <% } %>
 
                             
@@ -53,33 +62,57 @@
                          
                           <% if(request.sender.name == user.name) { %> 
                             
-                            <strong class="text-info"> Request for money sent to <%= request.receiver.name %> </strong>
-                            <br>
-                            <small class="text-warning" style="color: green;">Status : Money Received</small>
+
+                            <div class="col-lg-3 col-sm-3 col-3 text-center">
+                              <img src="<%= request.sender.avatar %>" alt="sender pic" width="50" style="border-radius: 60%;">
+                            </div>
+                            <div class="col-lg-8 col-sm-8 col-8">  
+                              <strong class="text-info"> Request for money sent to <%= request.receiver.name %> </strong>
+                              <div>
+                               <!--will fill in future if any content-->
+                              </div>
+                              <small class="text-warning" style="color: green;">Status : Money Received</small>
+                            </div>
+
+
                           
                           <% } else { %> 
-                            <strong class="text-info"> <%= request.sender.name %> Requested <%= request.amount%> Rupees </strong>
-                            <br>
-                            <small class="text-warning" style="color: green;">Status : Money Tranferred</small>
+
+
+                            <div class="col-lg-3 col-sm-3 col-3 text-center">
+                              <img src="<%= request.sender.avatar %>" alt="<%=user.name%>" width="50" style="border-radius: 60%;">
+                            </div>
+                            <div class="col-lg-8 col-sm-8 col-8">  
+                              <strong class="text-info"> <%= request.sender.name %> Requested <%= request.amount%> Rupees </strong>
+                              <div>
+                               <!--will fill in future if any content-->
+                              </div>
+                              <small class="text-warning" style="color: green;">Status : Money Tranferred</small>
+                            </div>
+
 
                           <% } %>
                           
                         <% } %>
-                      </p> 
+                        
                       
                     </div>
                     
                   <% } %>
           
-                </ol>
+                
 
               <% } else { %> 
                 <h5>Abhi Ni</h5>
               <% } %>
-          </div>    
+             
         </div>
+        
       </li>
-      <li class="notification-box">
+
+
+
+      <!--<li class="notification-box">
         <div class="row">
           <div class="col-lg-3 col-sm-3 col-3 text-center">
             <img src="/demo/man-profile.jpg" class="w-50 rounded-circle">
@@ -109,5 +142,5 @@
       </li>
       <li class="footer bg-dark text-center">
         <a href="" class="text-light">View All</a>
-      </li>
+      </li>-->
     </ul><!---dropdown menu ended-->
