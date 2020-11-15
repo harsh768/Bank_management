@@ -27,6 +27,7 @@ const transactionsSchema = new mongoose.Schema
     balance_of_receiver : {
         type : Number
     },
+    
     lastActiveAt : Date
 
 
