@@ -5,11 +5,11 @@
 
       <form action="/user/update-details/<%= user._id %>"  enctype="multipart/form-data" method="POST">
         <h1>Update Details</h1>
-          <input name = "email" type="email" placeholder="Enter New email Id">
-          <input name = "phone" type="number" placeholder="Enter New Phone Number">
+          <input name = "email" type="email" value="<%= user.email %>"placeholder="Enter New email Id">
+          <input name = "phone" type="number" value="<%= user.phone %>" placeholder="Enter New Phone Number">
           <input type="file" name="avatar" placeholder="profile picture">
 
-          <input type="submit">
+          <input type="submit" value="update" class="inp" >
       
       </form>
     </div>
