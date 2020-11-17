@@ -53,7 +53,7 @@
 					<% for(transaction of all_transactions) { %> 
 						
 						<tr>
-							<td>--DATE--</td><!--date-->
+							<td>17th November,2020</td><!--date-->
 							<% if(transaction.sender.name == transaction.receiver.name) { %> 
 							 <% if(transaction.deposit == true) { %> 
 								<!--When he clicks for self deposit money-->
@@ -101,7 +101,6 @@
 							</td><!--final balance-->
 						</tr>
 
-						<p><%= transaction.createdAt %></p>
 					<% } %>	
 				  </tbody>
 				  <!--Table body-->
