@@ -8,6 +8,22 @@ const storeScore = "PPMaxScore";
 const rod1Name = "Rod 1";
 const rod2Name = "Rod 2";
 
+let s;
+// Class game
+class game {
+
+    getscore() {
+        return s;
+    }
+}
+
+// Class balls inherited from games
+class balls extends game {
+    constructor(dimensions)
+    {
+        this.dimensions = dimensions;
+    }
+}
 
 let score,
     maxScore,
